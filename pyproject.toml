@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "point4d"
+version = "0.1.0"
+description = "Point4D: feed-forward 4D reconstruction with 3D-query trajectory chaining"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+    "torch~=2.6.0",
+    "numpy",
+    "opencv-python",
+    "einops",
+    "omegaconf",
+    "addict",
+    "pillow",
+    "pyyaml",
+    "huggingface-hub",
+]
+
+[project.optional-dependencies]
+# xformers only speeds up the SwiGLU FFN; the backbone falls back to plain
+# PyTorch when it is absent.
+speed = ["xformers"]
+# scripts/demo.py opens an interactive 3D viewer when viser is available.
+viz = ["viser"]
+
+[project.urls]
+Homepage = "https://point-4d.github.io"
+Repository = "https://github.com/point-4d/Point4D"
+
+[tool.setuptools.packages.find]
+include = ["point4d*"]
+
+[tool.setuptools.package-data]
+# the vendored Depth-Anything-3 fork ships its own Apache-2.0 copy
+point4d = ["**/*.json", "**/*.yaml", "**/LICENSE"]

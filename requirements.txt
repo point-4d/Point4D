@@ -1,0 +1,11 @@
+# Exact versions Point4D was verified with (Python 3.10, CUDA 12.4).
+# For a looser install, `pip install -e .` uses the ranges in pyproject.toml.
+torch==2.6.0
+numpy==2.2.6
+opencv-python==4.10.0.86
+einops==0.8.1
+omegaconf==2.3.0
+addict==2.4.0
+pillow==11.3.0
+pyyaml==6.0.3
+huggingface_hub==0.36.0

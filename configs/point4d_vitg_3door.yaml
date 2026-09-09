@@ -1,0 +1,23 @@
+# Point4D (ViT-g) — inference configuration.
+# Paths are relative to the repo root.
+model:
+  backbone_config_path: configs/da3_giant_backbone.json
+  img_size: 252
+  patch_size: 14
+
+  # geometry heads (their weights live in the checkpoint)
+  enable_camera: true
+  enable_depth: true
+
+  # 3D-query decoder
+  decoder_layers: 8
+  ego_centric: true
+  use_camtoken: true
+  use_memory_pos_enc: false
+  conf_activation: expp1
+  aux_uv: true
+  aux_vis: true
+
+  # per-frame time tokens in the backbone
+  time_encoding_scheme: time_token
+  time_encoding_type: sinusoidal

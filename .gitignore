@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+
+# model weights are distributed separately, not through git
+checkpoints/
+*.pt
+*.pth
+*.safetensors
+
+# demo.py writes here by default
+outputs/
