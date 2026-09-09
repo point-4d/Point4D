@@ -57,15 +57,11 @@ pip install viser          # only needed for the 3D viewer
 python scripts/demo.py     # tracks the bundled clip, then opens the viewer
 ```
 
-`scripts/demo.py` lays a grid of queries over frame 0 and tracks them through the video with given frame num (`--max_frames`), writing `outputs/tracks.npz`. It then opens an
-interactive [viser](https://viser.studio) viewer showing the per-frame point
-cloud with the 3D tracks and their trails.
-
-`examples/` holds sample videos: `bouldering_1.mp4` (default, 340 frames, a
-person climbing) and `bouldering_1_long.mp4`, the same take carried on to 792
-frames; `corridor.mp4` (192 frames, a runner in a concrete hallway); and
-`dog.mp4` (60 frames, DAVIS). Point the demo at one of those,
-at your own video, or skip the viewer on a headless machine:
+`scripts/demo.py` lays a grid of queries over frame 0, tracks them through
+`--max_frames` frames, writes `outputs/tracks.npz` and opens an interactive
+[viser](https://viser.studio) viewer. `examples/` holds `bouldering_1.mp4`
+(the default), `corridor.mp4` and `dog.mp4` — point the demo at one of those,
+at your own video, or skip the viewer:
 
 ```bash
 # the default clip
